@@ -7,6 +7,8 @@ import { useNavigate } from 'react-router-dom'
 const SignupForm = ({setIsLoggedIn}) => {
  const navigate = useNavigate();
 
+
+ const[confirmPassword,setconfirmPassword] = useState (true);
 const [showPassword,setShowPassword] = useState(false)
 const [accountType,setAccountType] = useState("student")
 const [formData,setFormData] = useState ({
@@ -97,7 +99,7 @@ function changeHandler(event){
   <input required type={showPassword ? ("text"):("password")} value={formData.password} id='password' placeholder='Enter the  Pasword' onChange={changeHandler} name='password'
      className='bg-richblack-800 rounded-[0.5rem] text-richblack-5 w-full p-[12px]'
   />
-  <span onClick={()=> setShowPassword((prev)=>!prev)}  className='absolute right-3 top-[38px] cursor-pointer'>
+  <span onClick={()=>setShowPassword((prev)=>!prev)}  className='absolute right-3 top-[38px] cursor-pointer'>
     {showPassword ? (<AiOutlineEyeInvisible fontSize={24} fill='#AFB2BF'/>) : (<AiOutlineEye fontSize={24} fill='#AFB2BF'/>)}
   </span>
   </label>
@@ -105,11 +107,11 @@ function changeHandler(event){
 
   <label className='relative' >
     <p className='text-[0.785rem] text-richblack-5 mb-1 leading-[1.375rem]'>Confirm Password</p>
-    <input required type={showPassword ? ("text"):("password")} value={formData.confirmPassword} id='confirmPassword' placeholder=' C onfirm Password ' onChange={changeHandler} name='confirmPassword'
+    <input required type={confirmPassword ? ("text"):("password")} value={formData.confirmPassword} id='confirmPassword' placeholder=' Confirm Password ' onChange={changeHandler} name='confirmPassword'
        className='bg-richblack-800 rounded-[0.5rem] text-richblack-5 w-full p-[12px]'
     />
-  <span onClick={()=> setShowPassword((prev)=>!prev)} className='absolute right-3 top-[38px] cursor-pointer'>
-    {showPassword ? (<AiOutlineEyeInvisible fontSize={24} fill='#AFB2BF'/>) : (<AiOutlineEye fontSize={24} fill='#AFB2BF'/>)}
+  <span onClick={()=>setconfirmPassword ((prev)=>!prev)} className='absolute right-3 top-[38px] cursor-pointer'>
+    {confirmPassword ? (<AiOutlineEyeInvisible fontSize={24} fill='#AFB2BF'/>) : (<AiOutlineEye fontSize={24} fill='#AFB2BF'/>)}
   </span>
   </label>
      </div>

@@ -5,7 +5,7 @@ const  PrivateRoute = ({isLoggedIn, children}) =>{
   if(isLoggedIn){
     return children;
   }else{
-      return  <Navigate to="./login"/>
+      return  <Navigate to="/login"/>
   };
   }
 

@@ -17,12 +17,11 @@ const App =() =>  {
 
     <Routes>
 
-      <Route path="/" element ={<Home/>} />
+      <Route path="/" element ={<Home isLoggedIn={isLoggedIn}/>} />
       <Route path="/about" element ={<About/>}/>
       <Route path="/login" element ={<Login setIsLoggedIn={setIsLoggedIn}/>} />
       <Route path="/signup" element ={<Signup setIsLoggedIn={setIsLoggedIn}/>}/>
-      <Route path="/dashbord" element ={
-      <PrivateRoute> <Dashbord/></PrivateRoute>
+      <Route path="/dashbord" element ={ <PrivateRoute isLoggedIn={isLoggedIn}>  <Dashbord/> </PrivateRoute>
 
       }/>
     </Routes>
