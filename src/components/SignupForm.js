@@ -32,8 +32,13 @@ function changeHandler(event){
     const  accountData = {
       ...formData
     };
-    console.log("Print account data");
-    console.log(accountData)
+
+    const finalData ={
+      ...accountData,
+      accountType
+    }
+    console.log("Print  final account data");
+    console.log(finalData)
     navigate("/dashbord ")
   }
 

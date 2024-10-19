@@ -24,6 +24,9 @@ function submitHandler(event) {
   setIsLoggedIn(true);
   toast.success("Logged In");
   navigate("/dashbord");
+  console.log("printing the form data")
+ console.log(formData);
+
 }
 return (
 <form onSubmit={submitHandler} className='flex flex-col w-full gap-y-4 mt-6'>
